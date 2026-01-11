@@ -1,4 +1,5 @@
 import { Farmer, FarmerStatus } from '@/types/farmer'
+import { saveFarmers } from '@/utils/storage'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface FarmerState {
@@ -15,15 +16,18 @@ const farmerSlice = createSlice({
     reducers: {
         addFarmer(state, action: PayloadAction<Farmer>) {
             state.farmers.push(action.payload)
+            saveFarmers(state.farmers)
         },
         updateFarmerStatus(state, action: PayloadAction<{ id: string, status: FarmerStatus }>) {
             const farmer = state.farmers.find(f => f.id === action.payload.id)
             if (farmer) {
                 farmer.status = action.payload.status
+                saveFarmers(state.farmers)
             }
         },
         setFarmers(state, action: PayloadAction<Farmer[]>) {
             state.farmers = action.payload
+            saveFarmers(state.farmers)
         }
     }
 })
