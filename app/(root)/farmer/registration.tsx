@@ -21,7 +21,7 @@ const Registration = () => {
                     <TextInput className='w-[47.5%] rounded-full border-[1px] px-5' placeholder='Crop Type' />
                 </View>
 
-                <TouchableOpacity onPress={() => router.navigate(`/(root)/farmer/123`)} className=' bg-black rounded-full shadow  mt-[25px] flex flex-row justify-center py-3'>
+                <TouchableOpacity onPress={() => router.navigate(`/(root)/farmer/login`)} className=' bg-black rounded-full shadow  mt-[25px] flex flex-row justify-center py-3'>
                     <Text className='font-semibold text-white text-[16px]'>Register</Text>
                 </TouchableOpacity>
 
