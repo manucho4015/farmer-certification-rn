@@ -1,5 +1,7 @@
 import type { RootState } from "@/app/store";
 import happyFarmer from "@/assets/images/farmer_bro.png";
+import sorryBro from "@/assets/images/sorry-bro.png";
+import waitingAmico from "@/assets/images/waiting-amico.png";
 import { logout } from "@/features/auth/authSlice";
 import { useRouter } from 'expo-router';
 import React from 'react';
@@ -42,7 +44,9 @@ const FarmerCertView = () => {
                 <Text className='font-medium text-[12px] text-gray-500'>Updated 2mins ago</Text>
             </View>
             <View className="flex flex-row justify-center">
-                <Image source={happyFarmer} className=" h-[50vh] w-[75vw]" resizeMode="contain" />
+                {currentFarmer?.status === 'pending' && <Image source={waitingAmico} className=" h-[50vh] w-[75vw]" resizeMode="contain" />}
+                {currentFarmer?.status === 'certified' && <Image source={happyFarmer} className=" h-[50vh] w-[75vw]" resizeMode="contain" />}
+                {currentFarmer?.status === 'declined' && <Image source={sorryBro} className=" h-[50vh] w-[75vw]" resizeMode="contain" />}
             </View>
 
             {currentFarmer && (
