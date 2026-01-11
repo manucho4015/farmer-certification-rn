@@ -4,10 +4,12 @@ export type UserRole = 'farmer' | 'admin' | null
 
 interface AuthState {
     role: UserRole
+    farmerId: string | null
 }
 
 const initialState: AuthState = {
-    role: null
+    role: null,
+    farmerId: null
 }
 
 const authSlice = createSlice({
@@ -17,11 +19,14 @@ const authSlice = createSlice({
         setRole(state, action: PayloadAction<UserRole>) {
             state.role = action.payload
         },
+        setFarmerId(state, action: PayloadAction<string | null>) {
+            state.farmerId = action.payload
+        },
         logout(state) {
             state.role = null
         }
     }
 })
 
-export const { setRole, logout } = authSlice.actions
+export const { setRole, setFarmerId, logout } = authSlice.actions
 export default authSlice.reducer
