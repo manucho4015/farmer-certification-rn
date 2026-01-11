@@ -18,7 +18,12 @@ const RoleSelectionScreen = () => {
   const handleSelectRole = (roleId: UserRole) => {
     dispatch(setRole(roleId))
 
-    roleId === 'farmer' && router.navigate('/(root)/farmer/registration')
+    if (roleId === 'farmer') {
+      router.replace('/(root)/farmer/login')
+    }
+    if (roleId === 'admin') {
+      router.replace('/(root)/admin')
+    }
   }
   return (
     <View className='flex-1 bg-gray-50 px-6 py-12 justify-center'>
