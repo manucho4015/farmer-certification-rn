@@ -3,7 +3,8 @@ import { setRole } from '@/features/auth/authSlice'
 import { useRouter } from 'expo-router'
 import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import type { RootState } from './store'
 
 const RoleButton = ({ label, handlePress, role }: { label: string, handlePress: (role: UserRole) => void, role: UserRole }) => (
   <TouchableOpacity onPress={() => handlePress(role)} className='bg-white p-6 rounded-xl shadow mb-4'>
@@ -14,13 +15,18 @@ const RoleButton = ({ label, handlePress, role }: { label: string, handlePress: 
 const RoleSelectionScreen = () => {
   const router = useRouter()
   const dispatch = useDispatch()
+  const { farmerId } = useSelector((store: RootState) => store.auth)
 
   const handleSelectRole = (roleId: UserRole) => {
     dispatch(setRole(roleId))
 
     if (roleId === 'farmer') {
-      router.replace('/(root)/farmer/login')
+      if (farmerId) {
+        return router.replace('/farmer/dashboard')
+      }
+      router.replace('/farmer/login')
     }
+
     if (roleId === 'admin') {
       router.replace('/(root)/admin')
     }
