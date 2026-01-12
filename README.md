@@ -54,14 +54,14 @@ npm install
 
 2. Start the app
 
-   ```bash
-   npx expo start
-   ```
+```bash
+npx expo start
+```
 
 ### 📸 Screenshots
 
-1. Role selection Page
-   ![Role selection screenshot](./assets/images/role-selection.jpeg)
+1. Role Selection Page
+   <img src="./assets/images/role-selection.jpeg" alt="Role selection screenshot" width="600" />
 
 2. Admin Dashboard
    ![Admin dashboard screenshot](./assets/images/admin.jpeg)
