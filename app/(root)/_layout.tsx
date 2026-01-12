@@ -1,7 +1,7 @@
 import { Slot } from "expo-router";
 import { ActivityIndicator, View } from "react-native";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "../../features/store";
 
 export default function RootLayout() {
     const { role, hydrated } = useSelector((state: RootState) => state.auth)

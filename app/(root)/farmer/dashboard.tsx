@@ -1,8 +1,8 @@
-import type { RootState } from "@/app/store";
 import happyFarmer from "@/assets/images/farmer_bro.png";
 import sorryBro from "@/assets/images/sorry-bro.png";
 import waitingAmico from "@/assets/images/waiting-amico.png";
 import { logout } from "@/features/auth/authSlice";
+import type { RootState } from "@/features/store";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useRouter } from 'expo-router';

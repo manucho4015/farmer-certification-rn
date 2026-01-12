@@ -1,6 +1,6 @@
-import type { RootState } from "@/app/store";
 import arrowLeft from '@/assets/images/material-symbols--arrow-left.png';
 import { setFarmerId, setRole } from '@/features/auth/authSlice';
+import type { RootState } from "@/features/store";
 import { Link, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
