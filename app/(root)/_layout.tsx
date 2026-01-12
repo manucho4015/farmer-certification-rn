@@ -1,14 +1,10 @@
-import { Redirect, Slot } from "expo-router";
+import { Slot } from "expo-router";
 import { ActivityIndicator, View } from "react-native";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 
 export default function RootLayout() {
     const { role, hydrated } = useSelector((state: RootState) => state.auth)
-
-    if (!role) {
-        return <Redirect href='/' />
-    }
 
     if (!hydrated) {
         return (
