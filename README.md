@@ -71,7 +71,6 @@ npx expo start
 3. Farmer Certification View
 
    <img src="./assets/images/farmer-dashboard.jpeg" alt="farmer certification view screenshot" width="300" height='500' />
-   ![Farmer certification view screenshot](./assets/images/farmer-dashboard.jpeg)
 
 4. Login Page
 
