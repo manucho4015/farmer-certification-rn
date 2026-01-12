@@ -1,4 +1,4 @@
-# Farmer Certification App (React Native / Expo)
+# AgriCert – Farmer Certification App
 
 This is a React Native (Expo) mobile application built as part of a take-home assignment.  
 The app demonstrates a simple certification workflow between **farmers** and an **admin**.
