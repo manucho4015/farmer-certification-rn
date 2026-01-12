@@ -1,6 +1,6 @@
 import type { RootState } from "@/app/store";
 import arrowLeft from '@/assets/images/material-symbols--arrow-left.png';
-import { setFarmerId } from '@/features/auth/authSlice';
+import { setFarmerId, setRole } from '@/features/auth/authSlice';
 import { Link, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
@@ -19,6 +19,7 @@ const login = () => {
             const farmer = farmers.find(f => f.name.toLowerCase() === name.toLowerCase().trim())
             if (farmer) {
                 dispatch(setFarmerId(farmer?.id))
+                dispatch(setRole('farmer'))
             }
             router.replace('/farmer/dashboard')
         } else {
