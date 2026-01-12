@@ -61,16 +61,22 @@ npx expo start
 ### 📸 Screenshots
 
 1. Role Selection Page
-   <img src="./assets/images/role-selection.jpeg" alt="Role selection screenshot" width="300" height='500' />
+
+   <img src="./assets/images/role-selection.jpeg" alt="Role selection screenshot" width="350" height='500' />
 
 2. Admin Dashboard
-   ![Admin dashboard screenshot](./assets/images/admin.jpeg)
+
+   <img src="./assets/images/admin.jpeg" alt="admin dashboard screenshot" width="350" height='500' />
 
 3. Farmer Certification View
+
+   <img src="./assets/images/farmer-dashboard.jpeg" alt="farmer certification view screenshot" width="350" height='500' />
    ![Farmer certification view screenshot](./assets/images/farmer-dashboard.jpeg)
 
 4. Login Page
-   ![Login Page screenshot](./assets/images/login.jpeg)
+
+   <img src="./assets/images/login.jpeg" alt="login page screenshot" width="350" height='500' />
 
 5. Registration Page
-   ![Registration Page screenshot](./assets/images/registration.jpeg)
+
+   <img src="./assets/images/registration.jpeg" alt="registration page screenshot" width="350" height='500' />
