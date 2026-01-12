@@ -61,7 +61,7 @@ npx expo start
 ### 📸 Screenshots
 
 1. Role Selection Page
-   <img src="./assets/images/role-selection.jpeg" alt="Role selection screenshot" width="600" />
+   <img src="./assets/images/role-selection.jpeg" alt="Role selection screenshot" width="600" height='200' />
 
 2. Admin Dashboard
    ![Admin dashboard screenshot](./assets/images/admin.jpeg)
