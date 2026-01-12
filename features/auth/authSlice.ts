@@ -28,6 +28,7 @@ const authSlice = createSlice({
         },
         logout(state) {
             state.role = null
+            saveAuth({ role: null, farmerId: null })
         },
         setHydrated(state) {
             state.hydrated = true
