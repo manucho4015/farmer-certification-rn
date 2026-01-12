@@ -64,7 +64,7 @@ npm install
 
 2. Start the app
 
-The app can be run using Expo Go, Android Emulator, or iOS Simulator.
+   The app can be run using Expo Go, Android Emulator, or iOS Simulator.
 
 ```bash
 npx expo start
