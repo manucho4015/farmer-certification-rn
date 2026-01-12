@@ -22,9 +22,10 @@ const RoleSelectionScreen = () => {
 
     if (roleId === 'farmer') {
       if (farmerId) {
-        return router.replace('/farmer/dashboard')
+        router.replace('/farmer/dashboard')
+      } else {
+        router.replace('/farmer/login')
       }
-      router.replace('/farmer/login')
     }
 
     if (roleId === 'admin') {
