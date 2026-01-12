@@ -1,4 +1,5 @@
 import type { RootState } from '@/app/store'
+import Close from '@/assets/images/close-small-rounded.png'
 import arrowLeft from '@/assets/images/material-symbols--arrow-left.png'
 import StatusButton from '@/components/StatusButton'
 import StatusPill from '@/components/StatusPill'
@@ -57,19 +58,20 @@ const AdminScreen = () => {
             <Modal visible={!!selectedFarmer} animationType='slide' transparent>
                 <View className='flex-1 bg-black/40 justify-end'>
                     <View className='bg-white rounded-t-3xl p-6'>
-                        <Text className='text-lg font-semibold mb-1'>{selectedFarmer?.name}</Text>
+                        <View className='flex flex-row justify-between items-center'>
+                            <Text className='text-lg font-semibold mb-1'>{selectedFarmer?.name}</Text>
+                            <TouchableOpacity onPress={() => setSelectedFarmer(null)}>
+                                <Image source={Close} className='size-7' resizeMode='contain' />
+                            </TouchableOpacity>
+                        </View>
 
-                        <View className='space-y-3'>
+                        <View className='flex flex-row justify-center gap-5 my-6'>
                             <StatusButton label='Pending' color='bg-yellow-100' textColor='text-yellow-700' onPress={() => updateStatus('pending')} />
 
                             <StatusButton label='Approve' color='bg-green-100' textColor='text-green-700' onPress={() => updateStatus('certified')} />
 
                             <StatusButton label='Decline' color='bg-red-100' textColor='text-red-700' onPress={() => updateStatus('declined')} />
                         </View>
-
-                        <TouchableOpacity onPress={() => setSelectedFarmer(null)} className='mt-4'>
-                            <Text className='text-center text-gray-500'>Cancel</Text>
-                        </TouchableOpacity>
                     </View>
                 </View>
             </Modal>
