@@ -21,6 +21,7 @@ const authSlice = createSlice({
     reducers: {
         setRole(state, action: PayloadAction<UserRole>) {
             state.role = action.payload
+            saveAuth({ role: state.role, farmerId: state.farmerId })
         },
         setFarmerId(state, action: PayloadAction<string | null>) {
             state.farmerId = action.payload
