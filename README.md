@@ -44,6 +44,16 @@ The app demonstrates a simple certification workflow between **farmers** and an 
 
 ---
 
+## 🧠 Design Decisions
+
+- **Redux Toolkit** was used to manage global application state such as user role and registered farmers, keeping state predictable and easy to reason about.
+- **AsyncStorage** is used to persist data locally in place of a backend, allowing the app to restore state seamlessly across restarts.
+- **Expo Router** handles role-based navigation at the layout level, avoiding screen-level redirects and keeping routing logic centralized.
+- Authentication logic is intentionally simple to match the scope of the assignment and keep the user flow clear.
+- The app structure was designed to allow a backend to be introduced later with minimal refactoring.
+
+---
+
 ## ▶️ Running the App
 
 1. Install dependencies
@@ -54,11 +64,15 @@ npm install
 
 2. Start the app
 
+The app can be run using Expo Go, Android Emulator, or iOS Simulator.
+
 ```bash
 npx expo start
 ```
 
 ### 📸 Screenshots
+
+The following screenshots demonstrate the main user flows within the application.
 
 1. Role Selection Page
 
@@ -79,3 +93,10 @@ npx expo start
 5. Registration Page
 
    <img src="./assets/images/registration.jpeg" alt="registration page screenshot" width="300" height='500' />
+
+---
+
+## 📝 Notes
+
+- An optional backend was considered for this assignment. However, given the time constraints, the focus was placed on delivering a complete, stable mobile experience with clear state management and persistence.
+- The current architecture allows a backend to be added easily in the future by replacing the AsyncStorage layer with API calls.
