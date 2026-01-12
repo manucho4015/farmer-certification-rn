@@ -51,7 +51,7 @@ const Registration = () => {
                     <TextInput value={cropType} onChangeText={setCropType} className='w-[47.5%] rounded-full border-[1px] px-5' placeholder='Crop Type' />
                 </View>
 
-                <TouchableOpacity onPress={handleRgister} className=' bg-black rounded-full shadow  mt-[25px] flex flex-row justify-center py-3'>
+                <TouchableOpacity disabled={!name && !farmSize && !cropType ? true : false} onPress={handleRgister} className=' bg-black rounded-full shadow  mt-[25px] flex flex-row justify-center py-3'>
                     <Text className='font-semibold text-white text-[16px]'>Register</Text>
                 </TouchableOpacity>
 

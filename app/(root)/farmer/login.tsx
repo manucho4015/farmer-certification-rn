@@ -36,7 +36,7 @@ const login = () => {
                 <TextInput value={name} onChangeText={setName} className='w-full rounded-full border-[1px] px-5' placeholder='Registered Farmer Name' />
 
 
-                <TouchableOpacity onPress={() => handleLogin(name)} className=' bg-black rounded-full shadow  mt-[25px] flex flex-row justify-center py-3'>
+                <TouchableOpacity disabled={!name ? true : false} onPress={() => handleLogin(name)} className=' bg-black rounded-full shadow  mt-[25px] flex flex-row justify-center py-3'>
                     <Text className='font-semibold text-white text-[16px]'>Check Status</Text>
                 </TouchableOpacity>
 
