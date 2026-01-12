@@ -27,13 +27,13 @@ const AdminScreen = () => {
     }
     return (
         <SafeAreaView className='flex-1 bg-white px-4 pt-6'>
-            <TouchableOpacity onPress={() => router.navigate('/')} className='flex flex-row gap-3 items-center'>
+            <TouchableOpacity onPress={() => router.navigate('/')} className='flex flex-row gap-2 items-center'>
                 <Image source={arrowLeft} className='size-8' resizeMode='contain' />
                 <Text>Home</Text>
             </TouchableOpacity>
             {/* Header */}
-            <Text className='text-2xl font-semibold mb-2'>Registered Farmers</Text>
-            <Text className='text-gray-500 mb-4'>Tap a farmer to update status</Text>
+            <Text className='text-2xl font-semibold mt-5'>Registered Farmers</Text>
+            <Text className='text-gray-500 mb-8 text-[12px]'>Tap a farmer to update status</Text>
 
             {/* Empty State */}
             {farmers.length === 0 ? (
