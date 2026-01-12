@@ -3,15 +3,13 @@ import { setFarmers } from "@/features/farmers/farmerSlice";
 import { loadAuth, loadFarmers } from "@/utils/storage";
 import { Stack, useRouter } from "expo-router";
 import { useEffect } from "react";
-import { Provider, useDispatch, useSelector } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import './global.css';
-import type { RootState } from "./store";
 import { store } from './store';
 
 function BootStrap() {
   const dispatch = useDispatch()
   const router = useRouter()
-  const { role, farmerId } = useSelector((store: RootState) => store.auth)
 
   useEffect(() => {
     const hydrate = async () => {
