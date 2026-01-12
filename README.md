@@ -1,14 +1,56 @@
-# Welcome to your Expo app 👋
+# Farmer Certification App (React Native / Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a React Native (Expo) mobile application built as part of a take-home assignment.  
+The app demonstrates a simple certification workflow between **farmers** and an **admin**.
 
-## Get started
+---
+
+## 🚀 Features
+
+### Farmer
+
+- Register with basic details (name, farm size, crop type)
+- Log in using registered name
+- View certification status
+- See when their status was last updated (relative time)
+
+### Admin
+
+- View list of registered farmers
+- Approve or reject farmer certification
+- Status updates are reflected instantly on the farmer side
+
+---
+
+## 🧱 Tech Stack
+
+- **React Native (Expo)**
+- **TypeScript**
+- **Expo Router** for file-based navigation
+- **Redux Toolkit** for state management
+- **AsyncStorage** for local persistence
+- **NativeWind (Tailwind CSS)** for styling
+
+---
+
+## 📂 App Architecture
+
+- Global state (Redux) manages:
+  - Current user role
+  - Registered farmers
+  - Current logged-in farmer
+- Data is persisted using AsyncStorage and restored on app launch
+- Routing decisions are handled at the layout level using Expo Router
+
+---
+
+## ▶️ Running the App
 
 1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 2. Start the app
 
@@ -16,35 +58,19 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+### 📸 Screenshots
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1. Role selection Page
+   ![Role selection screenshot](./assets/images/role-selection.jpeg)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+2. Admin Dashboard
+   ![Admin dashboard screenshot](./assets/images/admin.jpeg)
 
-## Get a fresh project
+3. Farmer Certification View
+   ![Farmer certification view screenshot](./assets/images/farmer-dashboard.jpeg)
 
-When you're ready, run:
+4. Login Page
+   ![Login Page screenshot](./assets/images/login.jpeg)
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. Registration Page
+   ![Registration Page screenshot](./assets/images/registration.jpeg)
