@@ -3,11 +3,15 @@ import happyFarmer from "@/assets/images/farmer_bro.png";
 import sorryBro from "@/assets/images/sorry-bro.png";
 import waitingAmico from "@/assets/images/waiting-amico.png";
 import { logout } from "@/features/auth/authSlice";
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from "react-redux";
+
+
 
 const AttributView = ({ label, value }: { label: string, value: string }) => (
     <View className="flex flex-row gap-5 mt-[5px]">
@@ -21,6 +25,7 @@ const FarmerCertView = () => {
     const dispatch = useDispatch()
     const currentFarmerId = useSelector((store: RootState) => store.auth.farmerId)
     const currentFarmer = useSelector((store: RootState) => store.farmers.farmers.find(f => f.id === currentFarmerId))
+    dayjs.extend(relativeTime)
 
     const statusBorderMap = {
         pending: 'border-yellow-500',
@@ -41,7 +46,7 @@ const FarmerCertView = () => {
         <SafeAreaView className='h-full px-8 bg-white pt-[2.5vh] relative'>
             <View className='flex flex-row justify-between items-center'>
                 <Text className='font-semibold text-[16px]'>My Status</Text>
-                <Text className='font-medium text-[12px] text-gray-500'>Updated 2mins ago</Text>
+                <Text className='font-medium text-[12px] text-gray-500'>Updated {dayjs(currentFarmer?.updatedAt).fromNow()}</Text>
             </View>
             <View className="flex flex-row justify-center">
                 {currentFarmer?.status === 'pending' && <Image source={waitingAmico} className=" h-[50vh] w-[75vw]" resizeMode="contain" />}

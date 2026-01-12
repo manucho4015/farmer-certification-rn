@@ -29,9 +29,9 @@ const Registration = () => {
             name: name.trim(),
             farmSize: Number(farmSize),
             cropType: cropType.trim(),
-            status: 'pending'
+            status: 'pending',
+            updatedAt: new Date().toISOString()
         }))
-
         dispatch(setFarmerId(farmerId))
 
         router.replace('/farmer/dashboard')

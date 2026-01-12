@@ -6,4 +6,5 @@ export interface Farmer {
     farmSize: number
     cropType: string
     status: FarmerStatus
+    updatedAt: string
 }

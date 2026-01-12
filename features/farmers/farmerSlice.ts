@@ -22,6 +22,7 @@ const farmerSlice = createSlice({
             const farmer = state.farmers.find(f => f.id === action.payload.id)
             if (farmer) {
                 farmer.status = action.payload.status
+                farmer.updatedAt = new Date().toISOString()
                 saveFarmers(state.farmers)
             }
         },
